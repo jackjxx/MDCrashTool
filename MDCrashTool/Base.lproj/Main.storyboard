@@ -707,18 +707,20 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="398" height="313"/>
+                        <rect key="frame" x="0.0" y="0.0" width="399" height="313"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I51-lb-nfH">
+                            <colorWell misplaced="YES" enabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I51-lb-nfH">
                                 <rect key="frame" x="-7" y="-8" width="415" height="327"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="color" red="0.041884976877803792" green="0.83747336991460419" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </colorWell>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GMa-xd-nwg">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GMa-xd-nwg">
                                 <rect key="frame" x="5" y="265" width="389" height="38"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="border" drawsBackground="YES" id="ksV-Pd-B3L">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="389" id="Jhz-6L-3fA"/>
+                                    <constraint firstAttribute="height" constant="38" id="Tzk-Ap-v3V"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" borderStyle="border" drawsBackground="YES" id="ksV-Pd-B3L">
                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
                                     <string key="title">请先按住iPad 音量+ 和 音量-，再按住 电源键 3s，松开电源
 键，再按住电源键 3s 松开，往复3次。此过程 音量+和 - 不松开</string>
@@ -726,14 +728,19 @@
                                     <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C78-wT-JZ5">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C78-wT-JZ5">
                                 <rect key="frame" x="-1" y="-17" width="403" height="295"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="295" id="6c0-GJ-QEz"/>
+                                </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="pad" id="Hxu-NC-s5k"/>
                             </imageView>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bi5-Vc-LvX">
+                            <button misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bi5-Vc-LvX">
                                 <rect key="frame" x="175" y="114" width="48" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="ThR-eS-yFP"/>
+                                    <constraint firstAttribute="width" constant="48" id="nH0-gQ-E4o"/>
+                                </constraints>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Play" imagePosition="only" alignment="center" alternateImage="rotation" state="mixed" allowsMixedState="YES" imageScaling="proportionallyUpOrDown" inset="2" id="jvM-A2-sZu">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -743,6 +750,20 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="C78-wT-JZ5" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="35" id="0xB-Lw-auR"/>
+                            <constraint firstItem="I51-lb-nfH" firstAttribute="centerX" secondItem="C78-wT-JZ5" secondAttribute="centerX" id="9Xb-LO-5xC"/>
+                            <constraint firstItem="GMa-xd-nwg" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="5" id="Hjh-8g-eCh"/>
+                            <constraint firstItem="I51-lb-nfH" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="-7" id="Xgi-Lr-SHQ"/>
+                            <constraint firstItem="GMa-xd-nwg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="bE4-Pt-MWh"/>
+                            <constraint firstItem="GMa-xd-nwg" firstAttribute="centerX" secondItem="bi5-Vc-LvX" secondAttribute="centerX" id="bjw-7a-9tM"/>
+                            <constraint firstItem="C78-wT-JZ5" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="-1" id="hAy-ra-gio"/>
+                            <constraint firstItem="GMa-xd-nwg" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="oKb-bK-F5A"/>
+                            <constraint firstAttribute="bottom" secondItem="I51-lb-nfH" secondAttribute="bottom" constant="-8" id="r2I-Xk-NqA"/>
+                            <constraint firstItem="I51-lb-nfH" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="-6" id="rvS-1A-cYq"/>
+                            <constraint firstAttribute="trailing" secondItem="C78-wT-JZ5" secondAttribute="trailing" constant="-4" id="sPc-CO-IH2"/>
+                            <constraint firstItem="bi5-Vc-LvX" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="151" id="zfp-CH-q5N"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="FuncButton" destination="bi5-Vc-LvX" id="jID-Kg-YEu"/>
