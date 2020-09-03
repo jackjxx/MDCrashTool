@@ -11,8 +11,8 @@
 @interface ViewController : NSViewController
 
 @property(nullable,nonatomic,readonly,strong) NSString *DeviceUDID;
-@property(nonatomic,readonly) NSUInteger *DeviceNum;
-@property (weak) IBOutlet NSButton *FuncButton;
+@property(nonatomic,readonly) int DeviceNum;
+@property (nullable,weak) IBOutlet NSButton *FuncButton;
 
 - (IBAction)RunCMD:(id _Nullable)sender;
 

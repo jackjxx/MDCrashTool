@@ -43,7 +43,7 @@
         UDID = [result substringWithRange:range];
     }
     if (range1.location != NSNotFound) {
-        DeviceNum = [[result substringWithRange:range1] integerValue];
+        DeviceNum = [[result substringWithRange:range1] intValue];
     }
     if (DeviceNum == 0) {
         [self alertinterface:@"OK" buttonWithTitle:nil messagetext:@"提示：" informativetext:@"请检查是否插入了机台！>.<"];
@@ -77,11 +77,13 @@
 -(void)alertinterface:(NSString *)title1 buttonWithTitle:(NSString *) title2 messagetext:(NSString *)messagetext informativetext:(NSString *)informative
 {
     NSAlert *alertForNotSelectIcon = [[NSAlert alloc] init];
-    [alertForNotSelectIcon addButtonWithTitle:title1];
-    [alertForNotSelectIcon addButtonWithTitle:title2];
+    NSButton* button1 = [alertForNotSelectIcon addButtonWithTitle:title1];
+    NSButton* button2 = [alertForNotSelectIcon addButtonWithTitle:title2];
     [alertForNotSelectIcon setMessageText:messagetext];
     [alertForNotSelectIcon setInformativeText:informative];
     [alertForNotSelectIcon setAlertStyle:NSAlertStyleWarning];
+    [button1 setRefusesFirstResponder:YES];
+    [button2 setRefusesFirstResponder:YES];
     [alertForNotSelectIcon beginSheetModalForWindow:self.view.window completionHandler:nil ];
 }
 @end
