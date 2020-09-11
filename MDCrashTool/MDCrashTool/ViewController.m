@@ -50,6 +50,23 @@
     }
     return UDID;
 }
+- (IBAction)UIToRecovery:(id)sender {
+    [self getUDID];
+    if (DeviceNum != 0) {
+        runTerminalCmd *mobdevCMD = [[runTerminalCmd alloc] init];
+        NSString *result = @"";
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        BOOL isFileExist = [fileManager fileExistsAtPath:@"/usr/local/bin//mobdev" isDirectory:FALSE];
+        if (isFileExist) {
+            result = [mobdevCMD shellScriptActionWithLaunchPath:@"/usr/local/bin//mobdev" argument:@[@"recovery"]];
+        }
+        else {
+            NSString *path=[[NSBundle mainBundle]pathForResource:@"mobdev" ofType:@""];
+            result = [mobdevCMD shellScriptActionWithLaunchPath:path argument:@[@"recovery"]];
+            
+        }
+    }
+}
 
 - (IBAction)RunCMD:(id)sender {
     DeviceUDID = [self getUDID];

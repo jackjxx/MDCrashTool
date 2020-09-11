@@ -749,6 +749,17 @@
                                     <action selector="RunCMD:" target="XfG-lQ-9wD" id="FVk-ig-rAz"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Jg-o1-y19">
+                                <rect key="frame" x="178" y="192" width="124" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="UIToRecovery" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gg6-0U-lA1">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="UIToRecovery:" target="XfG-lQ-9wD" id="R1D-kh-Xap"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
